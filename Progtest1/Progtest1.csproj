@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D095008D-F35B-42CC-9D2C-B11259BC0244}</ProjectGuid>
+    <ProjectGuid>{EE1D7F4C-7D29-4757-A4A6-EDC57F39BBAD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>D_Console</RootNamespace>
-    <AssemblyName>D-Console</AssemblyName>
+    <RootNamespace>Progtest1</RootNamespace>
+    <AssemblyName>Progtest1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="D-Console.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
