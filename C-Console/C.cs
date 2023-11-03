@@ -11,16 +11,12 @@ namespace C_Console
         static void Main(string[] args)
         {
             // iteration
-
-
-            for (int rows = 0; rows < 10; rows++)
+            for (int i = 0; i < 10; i++)
             {
-                for (int stars = 0; stars < 3; stars++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
+                Console.WriteLine(i);
             }
+
+           
 
             Console.ReadLine();
         }
