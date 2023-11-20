@@ -10,15 +10,29 @@ namespace F_Console
     {
         static void Main(string[] args)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                int square = i * i;
-                Console.WriteLine($"{i:-3}{square:-4}");
-            }
+
+            int num = GetNum();
+            int x = GetNum();
+            Console.WriteLine($"hello from main {num}");
             Console.ReadLine();
         }
-        
-       
-        
+
+        private static int GetNum()
+        {
+            Console.WriteLine("Enter a number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            return number;
+        }
+
+        private static void HelloFunction()
+        {
+            Console.WriteLine("hello from hello function or method");
+            Bosswell();
+        }
+
+        private static void Bosswell()
+        {
+            Console.WriteLine("hello from Boswell");
+        }
     }
 }
