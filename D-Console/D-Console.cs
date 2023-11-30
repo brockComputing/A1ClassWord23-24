@@ -10,53 +10,53 @@ namespace D_Console
     {
         static void Main(string[] args)
         {
-            int choice = 0, denNumber = 0, bit, colheader;
-            string binStr = "", hexStr = "";
-            choice = 0;
-            do
-            {
-                binStr = "";
-                denNumber = 0;
-                Console.WriteLine("1. Denary to Binary");
-                Console.WriteLine("2. Binary to Denary");
-                Console.WriteLine("9. To exit");
-                choice = Convert.ToInt32(Console.ReadLine());
+            int x = GetNum();
+            int y = GetNum();
+            int sum = 0;
+            sum = Add2Nums(x, y) + 56 ;
+            Console.WriteLine($"the addition is {sum}");
+            sum = 0;
+            Add2NumsWithRef(x, y,ref sum);
+            Console.WriteLine($"the addition is {sum}");
+            HelloFunction();
 
-                if (choice == 1)
-                {
-                    Console.WriteLine("enter a den number");
-                    denNumber = Convert.ToInt32(Console.ReadLine());
-                    while (denNumber != 0)
-                    {
-                        bit = denNumber % 2;
-                        binStr = bit + binStr;
-                        denNumber = denNumber / 2;
-                    }
-                    Console.WriteLine(binStr);
-                }
-                else if (choice == 2)
-                {
-                    binStr = "1101";
-                    int x = 9;
-                    string theString = "";
-                    //theString =  x.ToString()
-                    bit = Convert.ToInt32( binStr[3].ToString());
-                    //Console.WriteLine(bit);
-                    for (int i = binStr.Length - 1; i >= 0; i--)
-                    {
-                        Console.WriteLine(binStr[i].ToString());
-                        
-
-                    }
-                }
-                else if (choice == 3) // den to hex
-                {
-
-                }
-            } while (choice != 9);
+            Console.ReadLine();
         }
 
+        private static void Add2NumsWithRef(int x, int y, ref int sum)
+        {
+            sum = x + y;
+        }
 
+        private static int GetNum()
+        {
+            Console.Write("Enter a number: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            return x;
+        }
+
+        private static int Add2Nums(int x, int y)
+        {
+            int answer = x + y;
+            return answer;
+        }
+
+        private static void HelloFunction()
+        {
+            OrangeJuice();
+            
+            Console.WriteLine("hello from hello function");
+        }
+
+        private static void OrangeJuice()
+        {
+            int counter = 0; //local var
+            for (int i = 0; i < 10; i++)
+            {
+                counter++;
+                Console.WriteLine("this is from orange juice");
+            }
+        }
     }
 
 
