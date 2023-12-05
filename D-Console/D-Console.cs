@@ -13,6 +13,7 @@ namespace D_Console
             int x = GetNum();
             int y = GetNum();
             int sum = 0;
+            //no 5
             sum = Add2Nums(x, y) + 56 ;
             Console.WriteLine($"the addition is {sum}");
             sum = 0;
@@ -20,7 +21,22 @@ namespace D_Console
             Console.WriteLine($"the addition is {sum}");
             HelloFunction();
 
+            int counter = LetterCount("e", "the cat sat on the mat"); 
             Console.ReadLine();
+        }
+
+        private static int LetterCount(string letter, string sentance)
+        {
+            int count = 0;
+            for (int i = 0; i < sentance.Length; i++)
+            {
+                if (true)
+                {
+                    count++;
+                }
+            }
+
+            return count;
         }
 
         private static void Add2NumsWithRef(int x, int y, ref int sum)

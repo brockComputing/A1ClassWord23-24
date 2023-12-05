@@ -6,15 +6,31 @@ namespace C_Console
     {
         static void Main(string[] args)
         {
-            int x = GetNum();
-            int y = GetNum();
-            int sum = Add2Numbers(x, y);
-            Console.WriteLine($"the sum of thenumbers are {x} amd {y} is {sum}");
-            sum = 0;
-            Add2NumbersWithRef(x, y, ref sum);
-            Console.WriteLine($"the sum of thenumbers are {x} amd {y} is {sum}");
-            HelloFunction();
+            //int x = GetNum();
+            //int y = GetNum();
+            //int sum = Add2Numbers(x, y);
+            //Console.WriteLine($"the sum of thenumbers are {x} amd {y} is {sum}");
+            //sum = 0;
+            //Add2NumbersWithRef(x, y, ref sum);
+            //Console.WriteLine($"the sum of thenumbers are {x} amd {y} is {sum}");
+            //HelloFunction();
+            int counter = LetterFinder("e", "the cat");
             Console.ReadLine();
+        }
+
+        private static int LetterFinder(string letter, string sentance)
+        {
+            int count = 0;
+            for (int i = 0; i < sentance.Length; i++)
+            {
+                if (true) // if letter = sentance at position i 
+                {
+                    count++;
+                }
+            }
+
+            return count;
+
         }
 
         private static void Add2NumbersWithRef(int x, int y, ref int sum)

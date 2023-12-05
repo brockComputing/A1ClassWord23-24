@@ -4,60 +4,86 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace F_Console
+namespace VernamCipher
 {
-    internal class Program
+    class Program
     {
-        static Random rnd = new Random();
         static void Main(string[] args)
         {
-            
-            for (int i = 0; i < 6; i++)
+            string choice = "";
+            string plainText = "", cipherText = "", oneTimePAd = "";
+            do
             {
-                int number = rnd.Next(5, 11);
-                Console.WriteLine($"Random number: {number}");
-                //Console.ReadLine();
+                Console.WriteLine("1. to enter one-time pad");
+                Console.WriteLine("2. to enter plain text");
+                Console.WriteLine("3. to enter cipher text");
+                Console.WriteLine("4. to display cipher text");
+                Console.WriteLine("5. to display plain text");
+                Console.WriteLine("6. to display one-time pad");
+                Console.WriteLine("7. Encrypt.");
+                Console.WriteLine("8. Decrypt.");
+
+                choice = Console.ReadLine();
+                if (choice == "1")
+                {
+                    oneTimePAd = GetText("Enter the one time pad");
+                }
+                else if (choice == "2")
+                {
+                    plainText = GetText("Please enter the plain text");
+                }
+                else if (choice == "3")
+                {
+                    cipherText = GetText("Please enter the cipher text");
+                }
+                else if (choice == "4")
+                {
+                    Console.WriteLine("the cipher text --" + cipherText);
+                }
+                else if (choice == "5")
+                {
+                    Console.WriteLine("the plain text --" + plainText);
+                }
+                else if (choice == "6")
+                {
+                    Console.WriteLine("the one-time pad --" + oneTimePAd);
+                }
+                else if (choice == "7")
+                {
+                    cipherText = DoVernamCipher(plainText, oneTimePAd);
+                }
+                else if (choice == "8")
+                {
+                    plainText = DoVernamCipher(cipherText, oneTimePAd);
+                }
+            } while (choice.ToUpper() != "Y");
+        }
+
+
+
+        private static string DoVernamCipher(string plainORCipherText, string oneTimePad)
+        {
+            string output = "";
+            int numberValuePlainText = 0, numberValueOneTimePad = 0;
+            char charTobeAdded = ' ';
+            int newValue = 0;
+            for (int i = 0; i < plainORCipherText.Length; i++)
+            {
+                // numberValuePlainText <- plainORCipherText at position i -65
+                numberValuePlainText = plainORCipherText[i] - 65; 
+                // numberValueOneTimePad <- oneTimePad at position i - 65
+                // newValue <-(numberValuePlainText Xor numberValueOneTimePad)
+                // charTobeAdded <- ConvertTochar(newvalue + 65)
+                // output <- output + charTobeAdded
             }
 
-
-            int x = GetNum();
-            int y = GetNum();
-            int sum = AddNums(x, y);
-            Console.WriteLine($"THE ADDITION {x} and {y} is {sum}");
-            sum = 0;
-            AddNumsWithRef(x, y, ref sum);
-            Console.WriteLine($"THE ADDITION {x} and {y} is {sum}");
-            HelloFunction();
-
-            Console.ReadLine();
+            return output;
         }
-        private static void AddNumsWithRef(int x, int y, ref int sum)
+        private static string GetText(string v)
         {
-            sum = x + y;
-        }
-        private static int AddNums(int dave, int anne)
-        {
-            return dave + anne;
+            Console.WriteLine(v);
+            return Console.ReadLine().ToUpper();
         }
 
-
-
-        private static int GetNum()
-        {
-            Console.WriteLine("Enter a number");
-            int number = Convert.ToInt32(Console.ReadLine());
-            return number;
-        }
-
-        private static void HelloFunction()
-        {
-            Console.WriteLine("hello from hello function or method");
-            Bosswell();
-        }
-
-        private static void Bosswell()
-        {
-            Console.WriteLine("hello from Boswell");
-        }
     }
 }
