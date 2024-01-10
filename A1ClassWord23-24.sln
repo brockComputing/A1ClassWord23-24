@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F-Console", "F-Console\F-Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Progtest1", "Progtest1\Progtest1.csproj", "{EE1D7F4C-7D29-4757-A4A6-EDC57F39BBAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scratch", "Scratch\Scratch.csproj", "{44687A9A-4AEF-4D06-BAEF-710D83BC5EC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmasTest", "XmasTest\XmasTest.csproj", "{B98EE078-EC85-443C-B3A9-D02729B4716F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{EE1D7F4C-7D29-4757-A4A6-EDC57F39BBAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE1D7F4C-7D29-4757-A4A6-EDC57F39BBAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE1D7F4C-7D29-4757-A4A6-EDC57F39BBAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44687A9A-4AEF-4D06-BAEF-710D83BC5EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44687A9A-4AEF-4D06-BAEF-710D83BC5EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44687A9A-4AEF-4D06-BAEF-710D83BC5EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44687A9A-4AEF-4D06-BAEF-710D83BC5EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B98EE078-EC85-443C-B3A9-D02729B4716F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B98EE078-EC85-443C-B3A9-D02729B4716F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B98EE078-EC85-443C-B3A9-D02729B4716F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B98EE078-EC85-443C-B3A9-D02729B4716F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
