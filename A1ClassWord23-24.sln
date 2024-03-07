@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scratch", "Scratch\Scratch.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmasTest", "XmasTest\XmasTest.csproj", "{B98EE078-EC85-443C-B3A9-D02729B4716F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skeleton", "Skeleton\Skeleton.csproj", "{EA1CA406-D887-4DB6-BD45-67B76B49C167}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{B98EE078-EC85-443C-B3A9-D02729B4716F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B98EE078-EC85-443C-B3A9-D02729B4716F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B98EE078-EC85-443C-B3A9-D02729B4716F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA1CA406-D887-4DB6-BD45-67B76B49C167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA1CA406-D887-4DB6-BD45-67B76B49C167}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA1CA406-D887-4DB6-BD45-67B76B49C167}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA1CA406-D887-4DB6-BD45-67B76B49C167}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
