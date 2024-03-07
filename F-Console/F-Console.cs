@@ -3,263 +3,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
+using System.IO;
 
-namespace Sorting_Assignment_done
+namespace chapter12
 {
-    class Program
-    {
 
+    
+    class Country
+    {
+        public string CountryName { get; set; }
+        public double ExchangeRate { get; set; }
+        public string  CurrencyName { get; set; }
+      
+    }
+
+    class Chapter10
+    {
         static void Main(string[] args)
         {
-            int noInArray = HowManyNumbers();
-            int[] originalArray = new int[noInArray];
-            RandomTheArray(originalArray);
-            DisplayTheArray(originalArray);
-            string ans = "";
+            List<Country> countrylist = new List<Country>();
             do
             {
-                Console.WriteLine("1. Set array size");
-                Console.WriteLine("2. Bubble Sort");
-                Console.WriteLine("3. Bubble Sort Efficient");
-                Console.WriteLine("4. Merge Sort");
-                Console.WriteLine("5. Bogo Sort");
-                Console.WriteLine("9. Exit");
-                ans = Console.ReadLine();
-                switch (ans) //ans 
+                Console.WriteLine("1. Add a country");
+                Console.WriteLine("2. Display all countries ");
+                string ans = Console.ReadLine();    
+                if (ans == "1")
                 {
-                    case "1": // change size of the array          
-                        Array.Resize(ref originalArray, HowManyNumbers());
-                        RandomTheArray(originalArray);
-                        DisplayTheArray(originalArray);
-                        break;
-                    case "2": // bubble sort
-                        int[] bubArray = originalArray.Clone() as int[]; // cant pass arrays by value
-                        BubbleSort(bubArray);
-                        break;
-                    case "3": // bubble sort efficent
-                        int[] ebubArray = originalArray.Clone() as int[];
-                        EfficientBubbleSort(ebubArray);
-                        break;
-                    case "4": // merge sort - this is second year stuff so dont worry about it
-                        int[] mergeArray = originalArray.Clone() as int[];
-                        MergeSort(mergeArray);
-                        break;
-                    case "5":
-                        int[] bogoArray = originalArray.Clone() as int[];
-                        BogoSort(bogoArray);
-                        break;
+                    AddCountry(countrylist);
                 }
-
-            } while (ans != "9");
-
-        }
-        static Random rnd = new Random();
-        private static void BogoSort(int[] bogoArray)
-        {
-            Stopwatch timer = new Stopwatch();
-            int lengthOfArray = bogoArray.Length;
-            int temp = 0;
-            // get the start time
-            timer.Start();
-            // add your code here
-            long count = 0;
-            while (!Sorted(bogoArray))
-            {
-                int pos1 = rnd.Next(0, lengthOfArray);
-                int pos2 = rnd.Next(0, lengthOfArray);
-                // swap
-                temp = bogoArray[pos1];
-                bogoArray[pos1] = bogoArray[pos2];
-                bogoArray[pos2] = temp;
-                count++;
-            }
-            Console.WriteLine($"it took {count} goes");
-            timer.Stop();
-            DisplayTheArray(bogoArray);
-            TimeSpan ts = timer.Elapsed;
-            // Format and display the TimeSpan value. 
-            string elapsedTime = String.Format("{0:00}:{1:00}.{2:00}",
-                ts.Minutes, ts.Seconds,
-                ts.Milliseconds / 10);
-            Console.WriteLine("RunTime (minutes seconds milliseconds) " + elapsedTime);
-        }
-
-        private static bool Sorted(int[] bogoArray)
-        {
-            bool isSorted = true;
-            for (int i = 0; i < bogoArray.Length - 1; i++)
-            {
-                if (bogoArray[i] > bogoArray [i+1])
+                else if (ans == "2")
                 {
-                    isSorted = false;
+                    DisplayCountries(countrylist);
                 }
-            }
+            } while (true);
 
-            return isSorted;
-        }
-
-        static int HowManyNumbers()
-        {
-            int numbers = 0;
-            bool ok = true;
-            do
-            {
-                ok = true;
-                try
-                {
-                    Console.WriteLine("Please enter how many numbers");
-                    numbers = Convert.ToInt32(Console.ReadLine());
-                }
-                catch
-                {
-                    Console.WriteLine("You must only enter numbers");
-                    ok = false;
-                }
-            } while (!ok);
-            return numbers;
-        }
-
-        static void RandomTheArray(int[] theArray)
-        {
-            int lengthOfArray = theArray.Length;
-            Random rnd = new Random();
-            for (int i = 0; i < lengthOfArray; i++)
-            {
-                theArray[i] = rnd.Next(0, 1000); //random between 0 and 999
-            }
-        }
-
-        static void DisplayTheArray(int[] theArray)
-        {
-            foreach (int element in theArray)
-            {
-                Console.Write($"{element} ");
-            }
-            Console.WriteLine();
-        }
-
-        static void BubbleSort(int[] bubbleArray)
-        {
-            Stopwatch timer = new Stopwatch();
-            int lengthOfArray = bubbleArray.Length;
-            int temp = 0;
-            // get the start time
-            timer.Start();
-            // add your code here
-            for (int passes = 0; passes < lengthOfArray - 1; passes++)
-            {
-                for (int i = 0; i < lengthOfArray - 1; i++)
-                {
-                    if (bubbleArray[i] > bubbleArray[i + 1])
-                    {
-                        //swap
-                        temp = bubbleArray[i];
-                        bubbleArray[i] = bubbleArray[i + 1];
-                        bubbleArray[i + 1] = temp;
-                    }
-                }
-            }
-            timer.Stop();
-            DisplayTheArray(bubbleArray);
-            TimeSpan ts = timer.Elapsed;
-            // Format and display the TimeSpan value. 
-            string elapsedTime = String.Format("{0:00}:{1:00}.{2:00}",
-                ts.Minutes, ts.Seconds,
-                ts.Milliseconds / 10);
-            Console.WriteLine("RunTime (minutes seconds milliseconds) " + elapsedTime);
+            
+            Console.ReadLine(); 
+            
 
         }
 
-        static void EfficientBubbleSort(int[] bubbleArray)
+        private static void DisplayCountries(List<Country> countrylist)
         {
-            Stopwatch timer = new Stopwatch();
-            int lengthOfArray = bubbleArray.Length;
-            int temp = 0;
-            // get the start time
-            timer.Start();
-            // add your code here
-            for (int passes = 0; passes < lengthOfArray - 1; passes++)
-            {
-                for (int i = 0; i < lengthOfArray - 1 - passes; i++)
-                {
-                    if (bubbleArray[i] > bubbleArray[i + 1])
-                    {
-                        //swap
-                        temp = bubbleArray[i];
-                        bubbleArray[i] = bubbleArray[i + 1];
-                        bubbleArray[i + 1] = temp;
-                    }
-                }
-            }
-            timer.Stop();
-            DisplayTheArray(bubbleArray);
-            TimeSpan ts = timer.Elapsed;
-            // Format and display the TimeSpan value. 
-            string elapsedTime = String.Format("{0:00}:{1:00}.{2:00}",
-                ts.Minutes, ts.Seconds,
-                ts.Milliseconds / 10);
-            Console.WriteLine("RunTime (minutes seconds milliseconds) " + elapsedTime);
-
+            throw new NotImplementedException();
         }
 
-        private static void MergeSort(int[] mergeArray)
+        private static void AddCountry(List<Country> countrylist)
         {
-            Stopwatch timer = new Stopwatch();
-            timer.Start();
-            SortMerge(mergeArray, 0, mergeArray.Length - 1);
-            timer.Stop();
-            DisplayTheArray(mergeArray);
-            TimeSpan ts = timer.Elapsed;
-            // Format and display the TimeSpan value. 
-            string elapsedTime = String.Format("{0:00}:{1:00}.{2:00}",
-                ts.Minutes, ts.Seconds,
-                ts.Milliseconds / 10);
-            Console.WriteLine("RunTime (minutes seconds milliseconds) " + elapsedTime);
-        }
-
-
-
-        static public void MainMerge(int[] numbers, int left, int mid, int right)
-        {
-
-            int[] temp = new int[numbers.Length];
-            int i, eol, num, pos;
-            eol = (mid - 1);
-            pos = left;
-            num = (right - left + 1);
-            while ((left <= eol) && (mid <= right))
-            {
-                if (numbers[left] <= numbers[mid])
-                    temp[pos++] = numbers[left++];
-                else
-                    temp[pos++] = numbers[mid++];
-            }
-            while (left <= eol)
-                temp[pos++] = numbers[left++];
-            while (mid <= right)
-                temp[pos++] = numbers[mid++];
-            for (i = 0; i < num; i++)
-            {
-                numbers[right] = temp[right];
-                right--;
-            }
-        }
-
-
-        private static void SortMerge(int[] mergeArray, int left, int right)
-        {
-            int mid;
-            if (right > left)
-            {
-                mid = (right + left) / 2;
-                SortMerge(mergeArray, left, mid);
-                SortMerge(mergeArray, (mid + 1), right);
-                MainMerge(mergeArray, left, (mid + 1), right);
-            }
+            throw new NotImplementedException();
         }
     }
 }
-
-
-
