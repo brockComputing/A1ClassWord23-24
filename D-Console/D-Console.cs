@@ -5,55 +5,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ArraysExtraTasks
+namespace chapter12
 {
+    class Student
+    {
+        public string FirstName { get; set; }
+        public string SurName { get; set; }
+        public bool DepositPaid { get; set; }
+        public DateTime Dob { get; set; }
+        public string studentID { get; set; }
+        public ConsoleColor hairColour { get; set; }
+    }
+
+
     class Program
     {
-        static Random rnd = new Random();
+
         static void Main(string[] args)
         {
-            string test = "Uk,1,pounds,france, 1.2, euro";
-            string[] stuff = test.Split(',');
-            CharCount();
-            //string currentLine;
-            //StreamReader currentFile = new StreamReader("film.txt");
-            //while (!currentFile.EndOfStream)
-            //{
-            //    currentLine = currentFile.ReadLine();
-            //    Console.WriteLine(currentLine);
-            //}
-            //currentFile.Close();
+            List<Student> studentList = new List<Student>();
+
+            for (int i = 0; i < 4; i++)
+            {
+                string xx;
+                Student student = new Student();
+                Console.WriteLine("Enter the name");
+                student.FirstName = Console.ReadLine() + i;
+                studentList.Add(student);
+                xx = "helerjl";
+            }
+            
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine(studentList[i].FirstName);
+            }
+
+
 
             Console.ReadLine();
         }
 
-        private static void CharCount()
-        {
-            Console.WriteLine("Enter a letter");
-            string letter = Console.ReadLine();
-            string currentLine;
-            int count = 0;
-            StreamReader currentFile = new StreamReader("film.txt");
-            while (!currentFile.EndOfStream)
-            {
-                currentLine = currentFile.ReadLine();
-                foreach (char theLetter in currentLine)
-                {
-                    if (theLetter.ToString() == letter)
-                    {
-                        count++;
-                    }
-                }
-                //for (int i = 0; i < currentLine.Length; i++)
-                //{
-                //    if (currentLine[i].ToString() == letter)
-                //    {
-                //        count++;
-                //    }
-                //}
-            }
-            Console.WriteLine($"The letter {letter} occurs {count} times");
-            currentFile.Close();
-        }
+
+
     }
 }
