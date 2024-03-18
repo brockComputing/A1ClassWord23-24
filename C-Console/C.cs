@@ -5,45 +5,57 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Chap12
+namespace chapter12
 {
-    class Student
+
+
+    class Country
     {
-        public string FirstName { get; set; }
-        public string SurName { get; set; }
-        public bool DepositPaid { get; set; }
-        public DateTime Dob { get; set; }
-        public int AttendancePercent { get; set; }
-        public ConsoleColor HairColour { get; set; }
+        public string CountryName { get; set; }
+        public double ExchangeRate { get; set; }
+        public string CurrencyName { get; set; }
+
     }
 
-    class Chapter12
+    class Chapter10
     {
-        static Random rnd = new Random();
         static void Main(string[] args)
         {
-            List<Student> studentList = new List<Student>();
-            for (int i = 0; i < 4; i++)
+            List<Country> countrylist = new List<Country>();
+            string ans;
+            do
             {
-                string teststr = "hello";
-                Student student = new Student();
-                student.FirstName = "Geoff-" + i;
-                studentList.Add(student);
-                teststr = "bye";
-            }
-            test
-            foreach (var item in studentList)
-            {
-                Console.WriteLine(item.FirstName);
-            }
-            //Console.WriteLine(student1.FirstName);
-            //Console.WriteLine(student1.HairColour);
-            //Console.WriteLine(student2.FirstName);
-            //Console.WriteLine(student2.HairColour);
+                Console.WriteLine("1. Add a country");
+                Console.WriteLine("2. Display all countries ");
+                ans = Console.ReadLine();
+                if (ans == "1")
+                {
+                    AddCountry(countrylist);
+                }
+                else if (ans == "2")
+                {
+                    DisplayCountries(countrylist);
+                }
+            } while (ans != "9");
+
 
             Console.ReadLine();
+
+
         }
 
+        private static void DisplayCountries(List<Country> countrylist)
+        {
+            throw new NotImplementedException();
+        }
 
+        private static void AddCountry(List<Country> countrylist)
+        {
+            Country aCountry = new Country();
+            Console.WriteLine("Enter the name");
+            aCountry.CountryName = Console.ReadLine();
+
+
+        }
     }
 }
