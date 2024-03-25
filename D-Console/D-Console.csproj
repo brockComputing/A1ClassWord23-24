@@ -43,8 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="D-Console.cs" />
+    <Compile Include="D-Skeleton - Q4.cs" />
+    <Compile Include="D-Skeleton - Q3Improved.cs" />
+    <Compile Include="D-Skeleton - Q3.cs" />
+    <Compile Include="D-Skeleton -Q2.cs" />
+    <Compile Include="D-Skeleton-Q1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="D-Skeleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
