@@ -41,43 +41,10 @@
 //            else
 //            {
 //                Console.WriteLine("Hit at (" + Column + "," + Row + ").");
-//                OutPutShipSunk(Board[Row, Column], Board, Ships);
 //                Board[Row, Column] = 'h';
 //            }
 //        }
 
-//        private static void OutPutShipSunk(char symbol, char[,] board, ShipType[] ships)
-//        {
-//            int count = 0;
-//            //loop through board count how many symbols (look at set up board)
-//            for (int Row = 0; Row < 10; Row++)
-//            {
-//                for (int Column = 0; Column < 10; Column++)
-//                {
-//                    if (symbol == board[Row,Column])
-//                    {
-//                        count++;
-//                    }
-//                }
-//            }
-//            // if only one symbol output the ship sunk
-//            if (count == 1)
-//            {
-//                Console.WriteLine($"You have sunk a {OutPutShipHit(symbol,ships)}");
-//            }
-//        }
-
-//        private static string OutPutShipHit(char symbol, ShipType[] ships)
-//        {
-//            foreach (var item in ships)
-//            {
-//                if (item.Name[0] == symbol)
-//                {
-//                    return item.Name;
-//                }
-//            }
-//            return "";
-//        }
 //        private static void SetUpBoard(ref char[,] Board)
 //        {
 //            for (int Row = 0; Row < 10; Row++)
@@ -195,7 +162,7 @@
 //            {
 //                for (int Column = 0; Column < 10; Column++)
 //                {
-//                    if (Board[Row, Column] == 'A' || Board[Row, Column] == 'B' || Board[Row, Column] == 'S' || Board[Row, Column] == 'D' || Board[Row, Column] == 'P')
+//                    if (Board[Row, Column] == 'A' || Board[Row, Column] == 'B' || Board[Row, Column] == 'S' || Board[Row, Column] == 'D' || Board[Row, Column] == 'P' || Board[Row, Column] == 'F') // check
 //                    {
 //                        return false;
 //                    }
@@ -224,7 +191,7 @@
 //                    {
 //                        Console.Write(" ");
 //                    }
-//                    else if (Board[Row, Column] == 'A' || Board[Row, Column] == 'B' || Board[Row, Column] == 'S' || Board[Row, Column] == 'D' || Board[Row, Column] == 'P')
+//                    else if (Board[Row, Column] == 'A' || Board[Row, Column] == 'B' || Board[Row, Column] == 'S' || Board[Row, Column] == 'D' || Board[Row, Column] == 'P' || Board[Row, Column] == 'F') // change
 //                    {
 //                        Console.Write(" ");
 //                    }
@@ -296,12 +263,12 @@
 //            Ships[3] = dest;
 //            // alternative method of filling up the array
 //            Ships[4] = new ShipType { Name = "Patrol Boat", Size = 2 };
-
+//            Ships[5] = new ShipType { Name = "FiendShip", Size = 2 }; // change
 //        }
 
 //        static void Main(string[] args)
 //        {
-//            ShipType[] Ships = new ShipType[5];
+//            ShipType[] Ships = new ShipType[6]; // change
 //            char[,] Board = new char[10, 10];
 //            int MenuOption = 0;
 //            while (MenuOption != 9)

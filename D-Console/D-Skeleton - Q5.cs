@@ -41,43 +41,10 @@
 //            else
 //            {
 //                Console.WriteLine("Hit at (" + Column + "," + Row + ").");
-//                OutPutShipSunk(Board[Row, Column], Board, Ships);
 //                Board[Row, Column] = 'h';
 //            }
 //        }
 
-//        private static void OutPutShipSunk(char symbol, char[,] board, ShipType[] ships)
-//        {
-//            int count = 0;
-//            //loop through board count how many symbols (look at set up board)
-//            for (int Row = 0; Row < 10; Row++)
-//            {
-//                for (int Column = 0; Column < 10; Column++)
-//                {
-//                    if (symbol == board[Row,Column])
-//                    {
-//                        count++;
-//                    }
-//                }
-//            }
-//            // if only one symbol output the ship sunk
-//            if (count == 1)
-//            {
-//                Console.WriteLine($"You have sunk a {OutPutShipHit(symbol,ships)}");
-//            }
-//        }
-
-//        private static string OutPutShipHit(char symbol, ShipType[] ships)
-//        {
-//            foreach (var item in ships)
-//            {
-//                if (item.Name[0] == symbol)
-//                {
-//                    return item.Name;
-//                }
-//            }
-//            return "";
-//        }
 //        private static void SetUpBoard(ref char[,] Board)
 //        {
 //            for (int Row = 0; Row < 10; Row++)
@@ -263,10 +230,13 @@
 //        private static void PlayGame(ref char[,] Board, ref ShipType[] Ships)
 //        {
 //            bool GameWon = false;
+//            int counter = 0;
 //            while (GameWon == false)
 //            {
 //                PrintBoard(Board);
 //                MakePlayerMove(ref Board, ref Ships);
+//                counter++;
+//                Console.WriteLine($"You have made {counter} moves");
 //                GameWon = CheckWin(Board);
 //                if (GameWon == true)
 //                {

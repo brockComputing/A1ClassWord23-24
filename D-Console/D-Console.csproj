@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="D-Skeleton - Q7.cs" />
+    <Compile Include="D-Skeleton - Q6.cs" />
+    <Compile Include="D-Skeleton - Q5.cs" />
     <Compile Include="D-Skeleton - Q4.cs" />
     <Compile Include="D-Skeleton - Q3Improved.cs" />
     <Compile Include="D-Skeleton - Q3.cs" />
