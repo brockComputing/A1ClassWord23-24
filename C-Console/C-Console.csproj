@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Q8.cs" />
+    <Compile Include="Q7.cs" />
     <Compile Include="Q9.cs" />
     <Compile Include="Q6.cs" />
     <Compile Include="Q5.cs" />

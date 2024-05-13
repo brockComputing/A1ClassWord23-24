@@ -31,13 +31,12 @@
 //            GetRowColumn(ref Row, ref Column);
 //            if (usedNuke == false)
 //            {
-//                Console.WriteLine("do you want to use the nuke??");
+//                Console.WriteLine("Would you like to use the nuclear bomb?(y/n)");
 //                string ans = Console.ReadLine();
 //                if (ans.ToLower() == "y")
 //                {
-//                    UseNuclearBomb(Board, Row, Column);
+//                    DropNuclearBomb(ref Board, Row, Column);
 //                    usedNuke = true;
-//                    return; // leave the function
 //                }
 //            }
 //            if (Board[Row, Column] == 'm' || Board[Row, Column] == 'h')
@@ -56,36 +55,37 @@
 //            }
 //        }
 
-//        private static void UseNuclearBomb(char[,] Board, int rowDrop, int columnDrop)
+//        private static void DropNuclearBomb(ref char[,] Board, int row, int column)
 //        {
-//            for (int row = rowDrop - 1; row < rowDrop + 2; row++)
+//            for (int BombRow = row - 1; BombRow <= row + 1; BombRow++)
 //            {
-//                for (int column = columnDrop -1; column < columnDrop + 2; column++)
+//                for (int BombColumn = column - 1; BombColumn <= column + 1; BombColumn++)
 //                {
-//                    if (ValidPosition(row) && ValidPosition(column))
+//                    if (ValidPos(BombRow) && ValidPos(BombColumn))
 //                    {
-//                        if (Board[row, column] == 'm' || Board[row, column] == 'h')
+//                        // get the code from make player move.
+//                        if (Board[BombRow, BombColumn] == 'm' || Board[BombRow, BombColumn] == 'h')
 //                        {
-//                            Console.WriteLine("Sorry, you have already shot at the square (" + column + "," + row + "). Please try again.");
+//                            Console.WriteLine("Sorry, you have already shot at the square (" + BombColumn + "," + BombRow + "). Please try again.");
 //                        }
-//                        else if (Board[row, column] == '-')
+//                        else if (Board[BombRow, BombColumn] == '-')
 //                        {
-//                            Console.WriteLine("Sorry, (" + column + "," + row + ") is a miss.");
-//                            Board[row, column] = 'm';
+//                            Console.WriteLine("Sorry, (" + BombColumn + "," + BombRow + ") is a miss.");
+//                            Board[BombRow, BombColumn] = 'm';
 //                        }
 //                        else
 //                        {
-//                            Console.WriteLine("Hit at (" + column + "," + row + ").");
-//                            Board[row, column] = 'h';
+//                            Console.WriteLine("Hit at (" + BombColumn + "," + BombRow + ").");
+//                            Board[BombRow, BombColumn] = 'h';
 //                        }
 //                    }
 //                }
 //            }
 //        }
 
-//        private static bool ValidPosition(int position)
+//        private static bool ValidPos(int value)
 //        {
-//            if (position < 0 || position > 9)
+//            if (value < 0 || value > 9)
 //            {
 //                return false;
 //            }
@@ -277,11 +277,11 @@
 //        private static void PlayGame(ref char[,] Board, ref ShipType[] Ships)
 //        {
 //            bool GameWon = false;
-//            bool usedNuke = false;
+//            bool UsedNuke = false;
 //            while (GameWon == false)
 //            {
 //                PrintBoard(Board);
-//                MakePlayerMove(ref Board, ref Ships, ref usedNuke);
+//                MakePlayerMove(ref Board, ref Ships, ref UsedNuke);
 //                GameWon = CheckWin(Board);
 //                if (GameWon == true)
 //                {
