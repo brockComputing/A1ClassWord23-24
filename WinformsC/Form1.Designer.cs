@@ -41,7 +41,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(406, 241);
+            this.button1.Location = new System.Drawing.Point(404, 312);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 115);
             this.button1.TabIndex = 0;
@@ -56,7 +56,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 23);
             this.txtName.TabIndex = 1;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtAge
             // 
