@@ -116,7 +116,7 @@
             // 
             // btnOpenForm2
             // 
-            this.btnOpenForm2.Location = new System.Drawing.Point(700, 252);
+            this.btnOpenForm2.Location = new System.Drawing.Point(710, 214);
             this.btnOpenForm2.Name = "btnOpenForm2";
             this.btnOpenForm2.Size = new System.Drawing.Size(88, 97);
             this.btnOpenForm2.TabIndex = 8;
