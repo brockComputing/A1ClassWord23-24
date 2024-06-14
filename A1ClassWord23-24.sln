@@ -27,9 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsD", "WinFormsD\WinF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsF", "WinFormsF\WinFormsF.csproj", "{6A4F78F6-C511-4D91-98B5-CBC811E2256B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connect4", "..\BinCloclkConnect4Skel-netFramework\Connect4\Connect4.csproj", "{CDCE76BA-6908-428A-A92D-CA67C876F758}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connect4", "Connect4\Connect4.csproj", "{CDCE76BA-6908-428A-A92D-CA67C876F758}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinClock", "..\BinCloclkConnect4Skel-netFramework\BinCloclkConnect4Skel-netFramework\BinClock.csproj", "{1F2F9806-8C86-4CB1-ACF5-EEFF464C3DFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinClock", "BinCloclkConnect4Skel-netFramework\BinClock.csproj", "{1F2F9806-8C86-4CB1-ACF5-EEFF464C3DFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
