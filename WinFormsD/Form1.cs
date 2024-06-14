@@ -51,5 +51,13 @@ namespace WinFormsD
             sb.Color = Color.FromArgb(100, 100, 100);
             e.Graphics.FillEllipse(sb, 100, 100, 50,50);
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A)
+            {
+                MessageBox.Show("A");
+            }
+        }
     }
 }

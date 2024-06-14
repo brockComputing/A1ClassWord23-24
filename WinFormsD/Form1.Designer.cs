@@ -39,7 +39,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(454, 203);
+            this.button1.Location = new System.Drawing.Point(482, 200);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(189, 128);
             this.button1.TabIndex = 0;
@@ -112,10 +112,12 @@
             this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.button1);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
