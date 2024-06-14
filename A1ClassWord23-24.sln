@@ -27,8 +27,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsD", "WinFormsD\WinF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsF", "WinFormsF\WinFormsF.csproj", "{6A4F78F6-C511-4D91-98B5-CBC811E2256B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Connect4Skeleton", "Connect4Skeleton\Connect4Skeleton.csproj", "{C25B87CB-0DF5-44A5-96B8-832F507B5056}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connect4", "..\BinCloclkConnect4Skel-netFramework\Connect4\Connect4.csproj", "{CDCE76BA-6908-428A-A92D-CA67C876F758}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinClock", "..\BinCloclkConnect4Skel-netFramework\BinCloclkConnect4Skel-netFramework\BinClock.csproj", "{1F2F9806-8C86-4CB1-ACF5-EEFF464C3DFE}"
@@ -87,10 +85,6 @@ Global
 		{6A4F78F6-C511-4D91-98B5-CBC811E2256B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A4F78F6-C511-4D91-98B5-CBC811E2256B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A4F78F6-C511-4D91-98B5-CBC811E2256B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C25B87CB-0DF5-44A5-96B8-832F507B5056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C25B87CB-0DF5-44A5-96B8-832F507B5056}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C25B87CB-0DF5-44A5-96B8-832F507B5056}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C25B87CB-0DF5-44A5-96B8-832F507B5056}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CDCE76BA-6908-428A-A92D-CA67C876F758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CDCE76BA-6908-428A-A92D-CA67C876F758}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDCE76BA-6908-428A-A92D-CA67C876F758}.Release|Any CPU.ActiveCfg = Release|Any CPU
